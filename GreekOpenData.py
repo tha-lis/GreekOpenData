@@ -79,7 +79,6 @@ class GreekOpenData:
 
         # Create the dialog (after translation) and keep reference
         self.dlg = GreekOpenDataDialog()
-
         # Declare instance attributes
         self.actions = []
         self.menu = self.tr(u'&Greek Open Data')
@@ -87,7 +86,7 @@ class GreekOpenData:
         self.toolbar = self.iface.addToolBar(u'GreekOpenData')
         self.toolbar.setObjectName(u'GreekOpenData')
         # define the datasets used. List of webServices custon objects
-        self.datasets = self.loadDatasets()
+        self.datasets = self.loadDatasets()        
         #events
         
         self.dlg.tableWidget.itemSelectionChanged.connect(self.updateDescAndQL)
@@ -540,6 +539,9 @@ class GreekOpenData:
             if not vlayer.isValid():
               print "Layer failed to load!"
             QgsMapLayerRegistry.instance().addMapLayer(vlayer)
+            #re-appear window
+            self.dlg.raise_()
+            self.dlg.activateWindow()
 
                 
     def run(self):

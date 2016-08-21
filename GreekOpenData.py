@@ -314,7 +314,7 @@ class GreekOpenData:
         # expand the selection to the entire line
         #self.expandSelection()
 
-        quicklook = os.path.join(self.quicklooks_dir, dataset.QLname+".png")
+        quicklook = os.path.join(self.quicklooks_dir, dataset.QLname+".jpg")
         desc = dataset.getDescription(self.language)
         name = dataset.getName(self.language)
 

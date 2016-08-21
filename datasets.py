@@ -56,14 +56,6 @@ class WebServiceParams:
         # encode to utf-8
         desc = unicode(desc, 'utf-8')
         return desc
-            
-            
-            
-        
-            
-	       
-
-
 		
 	
     def webServiceParams(self):
@@ -79,7 +71,7 @@ class WebServiceParams:
                 EPSG = "EPSG:4326"
                 
             params = "contextualWMSLegend=0&crs=" + EPSG+"&dpiMode=7&featureCount=10&format=image/png"
-            #construct urk to call the webService
+            #construct url to call the webService
             urlWithParams = ignoreRequests + params + layers +  styles +  url
 
             return  urlWithParams

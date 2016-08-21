@@ -249,14 +249,14 @@ class GreekOpenData:
                 name = nameEn
                 sourceGR = row[2]
                 sourceEN = row[4]
-                creationDate = row[7]
-                lastUpdate = row[6]
-                QLname = row[9]
-                descEN = row[10]
-                descGR = row[11]
-                serviceType = row[12]
-                layerName = row[13]
-                server = row[15]
+                creationDate = row[6]
+                lastUpdate = row[5]
+                QLname = row[7]
+                descEN = row[8]
+                descGR = row[9]
+                serviceType = row[10]
+                layerName = row[11]
+                server = row[12]
 
                 webServiceObj = WebServiceParams(name, nameGr,nameEn,sourceGR,sourceEN,creationDate,lastUpdate,
                                                  descEN,descGR,serviceType, layerName,server,QLname)
@@ -430,7 +430,7 @@ class GreekOpenData:
 ##        self.dlg.search_lineEdit.setFont(font)
         # welcome text
         if self.language == "EN":
-            self.dlg.search_lineEdit.setText("Search for dataset name, servive type or organization...")
+            self.dlg.search_lineEdit.setText("Search for dataset name, service type or organization...")
         elif self.language == "GR":
             self.dlg.search_lineEdit.setText(unicode("Αναζήτηση για όνομα, τύπο υπηρεσίας ή οργανισμό...","utf-8"))
 

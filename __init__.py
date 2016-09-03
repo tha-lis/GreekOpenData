@@ -31,5 +31,5 @@ def classFactory(iface):  # pylint: disable=invalid-name
     :type iface: QgsInterface
     """
     #
-    from .GreekOpenData import GreekOpenData
+    from .mainPlugin import GreekOpenData
     return GreekOpenData(iface)

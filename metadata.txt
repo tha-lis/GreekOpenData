@@ -1,39 +1,23 @@
-# This file contains metadata for your plugin. Since 
-# version 2.0 of QGIS this is the proper way to supply 
-# information about a plugin. The old method of 
-# embedding metadata in __init__.py will 
-# is no longer supported since version 2.0.
-
-# This file should be included when you package your plugin.# Mandatory items:
-
 [general]
 name=Greek Open Data
-qgisMinimumVersion=2.0
-description=View free Greek Web-services
-version=0.1
+email=imitzi.irini@gmail.com;thanos.strantzalis@gmail.com
+
 author=Simitzi Eirini;Thanos Strantzalis
-email=simitzi.irini@gmail.com;thanos.strantzalis@gmail.com
+qgisMinimumVersion=2.0
+description=View Open Greek Web-services
 
-about=View free Greek Web-services
-
-tracker=*
-repository=**
-# End of mandatory metadata
-
-# Recommended items:
-
-# Uncomment the following line and add your changelog:
-# changelog=
-
-# Tags are comma separated with spaces allowed
-tags=*
-
-homepage=*
-category=Plugins
+about=This plugin is a collection of the most important publicly available web services (WMS + WFS) for Greece. 
+	It requires an internet connection.
+	The plugin was created with the purpose of giving to the users the opportunity to easily have an overview of the available open datasets and to be able to quickly view and/or download them.
+	CRS is GGRS87/Greek Grid (EPSG:2100)
+version=version 1.0
+tracker=https://github.com/thaura/GreekOpenData/issues
+repository=https://github.com/thaura/GreekOpenData
+category=Web
+#changelog=
+tags=Greece,Greek,WMS,web services,open data
+homepage=https://github.com/thaura/GreekOpenData
 icon=icon.png
-# experimental flag
 experimental=False
-
-# deprecated flag (applies to the whole plugin, not just a single version)
 deprecated=False
-
+qgisMaximumVersion=

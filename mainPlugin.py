@@ -40,8 +40,6 @@ sys.setdefaultencoding("utf-8")
 
 
 
-
-
 class GreekOpenData:
     """QGIS Plugin Implementation."""   
 
@@ -499,11 +497,12 @@ class GreekOpenData:
                 
         urlWithParams = dataset.webServiceParams()        
         if dataset.serviceType== "WMS":
-            rlayer = QgsRasterLayer(dataset.webServiceParams(), dataset.getName(self.language), dataset.serviceType.lower())
+            rlayer = QgsRasterLayer(dataset.webServiceParams(), dataset.getName(self.language), dataset.serviceType.lower())            
             if not rlayer.isValid():
                 QMessageBox.information(None, "ERROR:", str(dataset_name + "  cannot be loaded. Check your internet connection."))
                
-            QgsMapLayerRegistry.instance().addMapLayer(rlayer)
+            QgsMapLayerRegistry.instance().addMapLayer(rlayer)                        
+            self.iface.legendInterface().setLayerExpanded(rlayer,False) # collapse the layer'slegend
         elif dataset.serviceType== "WFS":                       
             vlayer = QgsVectorLayer(dataset.webServiceParams(), dataset.getName(self.language), dataset.serviceType)
             #QMessageBox.information(None, "ERROR:", str(dataset.webServiceParams())) 

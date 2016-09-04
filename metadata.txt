@@ -1,6 +1,6 @@
 [general]
 name=Greek Open Data
-email=imitzi.irini@gmail.com;thanos.strantzalis@gmail.com
+email=simitzi.irini@gmail.com thanos.strantzalis@gmail.com
 
 author=Simitzi Eirini;Thanos Strantzalis
 qgisMinimumVersion=2.0

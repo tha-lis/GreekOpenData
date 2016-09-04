@@ -30,7 +30,7 @@ import resources
 # Import the code for the dialog
 from GreekOpenData_dialog import GreekOpenDataDialog
 from webService_CLASS import WebServiceParams
-import os.path
+import os.path, webbrowser,urllib,urlparse
 import csv, Image
 from qgis.gui import *
 from qgis.core import *
@@ -93,6 +93,7 @@ class GreekOpenData:
         self.updateLanguage()        
         self.dlg.search_lineEdit.textEdited.connect(self.search)        
         self.dlg.language_comboBox.currentIndexChanged.connect(self.updateLanguage)
+        self.dlg.info_btn.released.connect(self.showInfo)
   
    
 
@@ -263,6 +264,7 @@ class GreekOpenData:
             self.dlg.load_btn.setText("Load")
             self.dlg.close_btn.setText("Close")
             self.dlg.search_lbl.setText("Search")
+            self.dlg.info_btn.setText("Info")
         elif language == "Greek":
             self.language = "GR"
             self.dlg.desc_lbl.setText(unicode("Περιγραφή", 'utf-8'))
@@ -270,6 +272,7 @@ class GreekOpenData:
             self.dlg.load_btn.setText(unicode("Φόρτωση",'utf-8'))
             self.dlg.close_btn.setText(unicode("Κλείσιμο",'utf-8'))
             self.dlg.search_lbl.setText(unicode("Αναζήτηση",'utf-8'))
+            self.dlg.info_btn.setText(unicode("Πληροφορίες", 'utf-8'))
 
         self.dlg.preview_lbl.setAlignment(Qt.AlignRight)
         #refill the table
@@ -513,6 +516,18 @@ class GreekOpenData:
             self.dlg.raise_()
             self.dlg.activateWindow()
 
+    def showInfo(self):
+        if self.language == "EN":
+            info_html = "info_en.html"
+        elif self.language == "GR":
+            info_html = "info_gr.html"
+        # show htmpl in browser
+        
+        local_path = os.path.join(self.plugin_dir,info_html)        
+        abs_path = os.path.abspath(local_path)       
+        url = urlparse.urljoin('file:', urllib.pathname2url(abs_path))         
+        #QMessageBox.information(None, "ERROR:", str(url))
+        webbrowser.open_new_tab(url)
                 
     def run(self):
         """Run method that performs all the real work"""

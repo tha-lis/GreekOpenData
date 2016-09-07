@@ -7,7 +7,7 @@ qgisMinimumVersion=2.0
 description=View Open Greek Web-services
 
 about=This plugin is a collection of the most important publicly available web services (WMS + WFS) for Greece. 
-	It requires an internet connection.
+	It requires an internet connection. 
 	The plugin was created with the purpose of giving to the users the opportunity to easily have an overview of the available open datasets and to be able to quickly view and/or download them.
 	CRS is GGRS87/Greek Grid (EPSG:2100)
 version=version 1.0

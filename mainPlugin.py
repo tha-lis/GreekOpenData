@@ -502,7 +502,7 @@ class GreekOpenData:
         if dataset.serviceType== "WMS":
             rlayer = QgsRasterLayer(dataset.webServiceParams(), dataset.getName(self.language), dataset.serviceType.lower())            
             if not rlayer.isValid():
-                QMessageBox.information(None, "ERROR:", str(dataset_name + "  cannot be loaded. Check your internet connection."))
+                QMessageBox.information(None, "ERROR:", str("..Oops! " + dataset_name + "  cannot be loaded. Either the server is down or you have limited internet connectivity"))
                
             QgsMapLayerRegistry.instance().addMapLayer(rlayer)                        
             self.iface.legendInterface().setLayerExpanded(rlayer,False) # collapse the layer'slegend
@@ -510,7 +510,7 @@ class GreekOpenData:
             vlayer = QgsVectorLayer(dataset.webServiceParams(), dataset.getName(self.language), dataset.serviceType)
             #QMessageBox.information(None, "ERROR:", str(dataset.webServiceParams())) 
             if not vlayer.isValid():
-                QMessageBox.information(None, "ERROR:", str(dataset_name + "  cannot be loaded. Check your internet connection."))
+                QMessageBox.information(None, "ERROR:", str("..Oops! " + dataset_name + "  cannot be loaded. Either the server is down or you have limited internet connectivity"))
             QgsMapLayerRegistry.instance().addMapLayer(vlayer)
             #re-appear window
             self.dlg.raise_()

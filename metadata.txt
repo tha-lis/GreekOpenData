@@ -10,7 +10,7 @@ about=This plugin is a collection of the most important publicly available web s
 	It requires an internet connection. 
 	The plugin was created with the purpose of giving to the users the opportunity to easily have an overview of the available open datasets and to be able to quickly view and/or download them.
 	CRS is GGRS87/Greek Grid (EPSG:2100)
-version=version 1.1
+version=version 1.2
 tracker=https://github.com/thaura/GreekOpenData/issues
 repository=https://github.com/thaura/GreekOpenData
 category=Web

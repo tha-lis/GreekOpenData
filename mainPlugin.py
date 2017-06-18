@@ -31,7 +31,11 @@ import resources
 from GreekOpenData_dialog import GreekOpenDataDialog
 from webService_CLASS import WebServiceParams
 import os.path, webbrowser,urllib,urlparse
-import csv, Image
+import csv
+try:
+    import Image
+except:
+    from PIL import Image
 from qgis.gui import *
 from qgis.core import *
 import sys
@@ -45,7 +49,7 @@ class GreekOpenData:
 
     
     def __init__(self, iface):
-        
+    
         """Constructor.
 
         :param iface: An interface instance that will be passed to this class

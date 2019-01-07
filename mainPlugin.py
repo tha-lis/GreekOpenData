@@ -507,16 +507,16 @@ class GreekOpenData:
         if dataset.serviceType== "WMS":
             rlayer = QgsRasterLayer(dataset.webServiceParams(), dataset.getName(self.language), dataset.serviceType.lower())
             if not rlayer.isValid():
-                #QMessageBox.information(None, "ERROR:", u"..Oops! " + unicode(dataset_name,"utf-8")+ "  cannot be loaded. Either the server is down or you have limited internet connectivity")
-                QMessageBox.information(None, "ERROR:", u"..Oops! {} cannot be loaded. Either the server is down or you have limited internet connectivity".format(dataset_name))
+                #QMessageBox.information(None, "Error loading dataset", u"..Oops! " + unicode(dataset_name,"utf-8")+ "  cannot be loaded. Either the server is down or you have limited internet connectivity")
+                QMessageBox.information(None, "Error loading dataset", u"..oops! Dataset: '{}' cannot be loaded. Either the server ({}) is down or you have limited internet connectivity".format(dataset_name,dataset.server))
 
             QgsMapLayerRegistry.instance().addMapLayer(rlayer)
             self.iface.legendInterface().setLayerExpanded(rlayer,False) # collapse the layer'slegend
         elif dataset.serviceType== "WFS":
             vlayer = QgsVectorLayer(dataset.webServiceParams(), dataset.getName(self.language), dataset.serviceType)
-            #QMessageBox.information(None, "ERROR:", str(dataset.webServiceParams()))
+            #QMessageBox.information(None, "Error loading dataset", str(dataset.webServiceParams()))
             if not vlayer.isValid():
-                QMessageBox.information(None, "ERROR:", u"..Oops! {} cannot be loaded. Either the server is down or you have limited internet connectivity".format(dataset_name))
+                QMessageBox.information(None, "Error loading dataset", u"..oops! Dataset: '{}' cannot be loaded. Either the server ({}) is down or you have limited internet connectivity".format(dataset_name,dataset.server))
             QgsMapLayerRegistry.instance().addMapLayer(vlayer)
             #re-appear window
             self.dlg.raise_()

@@ -514,7 +514,7 @@ class GreekOpenData:
             self.iface.legendInterface().setLayerExpanded(rlayer,False) # collapse the layer'slegend
         elif dataset.serviceType== "WFS":
             vlayer = QgsVectorLayer(dataset.webServiceParams(), dataset.getName(self.language), dataset.serviceType)
-            #QMessageBox.information(None, "Error loading dataset", str(dataset.webServiceParams()))
+            #QMessageBox.information(None, "Error loading dataset:", str(dataset.webServiceParams()))
             if not vlayer.isValid():
                 QMessageBox.information(None, "Error loading dataset", u"..oops! Dataset: '{}' cannot be loaded. Either the server ({}) is down or you have limited internet connectivity".format(dataset_name,dataset.server))
             QgsMapLayerRegistry.instance().addMapLayer(vlayer)
